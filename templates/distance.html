@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<form action="/distanceMatrix" method="POST">
+    <div class="grid--container">
+        {% for city in cities %}
+        <div class="grid--item">
+            <h3>{{city.name}} number = {{city.id}}</h3>
+            {% for i in range(cities | length) %}
+            <label for="{{city.name}}{{i}}" class="distance--label">Enter distance from City {{city.name}} to City
+                {{cities[i].name}}</label>
+            <!-- naming every input field by cityname and index -->
+            <input type="number" name="{{city.name}}{{i}}" id="{{city.name}}{{i}}" class="number--input">
+            <br>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="submit--container">
+        <label for="startCity" class="start--label">Enter Starting City by number: </label>
+        <input type="number" name="startCity" id="startCity" class="number--input">
+        <br />
+        <input type="submit" class="submit--btn" value="Submit">
+    </div>
+</form>
+
+
+{% endblock %}

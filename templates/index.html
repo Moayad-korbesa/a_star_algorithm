@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="container">
+        <div class="title">
+            <h1>Add Cities</h1>
+        </div>
+        <form action="/" method="POST">
+            <input type="text" name="city" id="city" class="city--input">
+            <button type="submit" class="add--city">Submit</button>
+        </form>
+        {% if cities | length < 1 %} <h3 class="result--title">There are no Cities ... Create one Here!</h3>
+            {% else %}
+            <div class="table--container">
+                {% for city in cities %}
+                <div class="city">
+                    <h1> <i class="fa fa-globe globe--icon"></i> {{city.name}} </h1>
+                    <a href="/delete/{{city.id}}" class="delete--link"><button class="delete--btn">Delete</button></a>
+                </div>
+                {% endfor %}
+            </div>
+            {% if cities | length >= 4 %}
+            <a href="/distanceMatrix" class="confirm--link"><button class="confirm--btn">Confirm</button></a>
+            {% endif %}
+            {% endif %}
+    </div>
+</div>
+{% endblock %}

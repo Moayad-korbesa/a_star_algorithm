@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+
+<div class="content center">
+    <div class="container">
+        <h1 class="result--title">Shortest Path: </h1>
+        <div class="result--container">
+            {% for i in shortestPath %}
+            <div class="city--container">
+                <h1> {{cities[i].name}}</h1>
+            </div>
+            {% endfor %}
+        </div>
+        <h1 class="result--title">Cost:</h1>
+        <div class="city--container">
+            <h1>{{cost}}</h1>
+        </div>
+        <a href="/" class="confirm--link"><button class="confirm--btn margin">Enter new cities</button></a>
+    </div>
+</div>
+
+{% endblock %}

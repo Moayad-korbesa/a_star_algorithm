@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style -->
+    <link rel="stylesheet" href="{{url_for('static' , filename='styles.css')}}">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>A* Algorithm for TSP</title>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <main>
+        <!-- Navbar -->
+
+        <nav class="navbar--main">
+            <i class="fa fa-globe globe--icon"></i>
+            <h1 class="navbar--title">A* Algorithm for TSP</h1>
+        </nav>
+        {% block body %}{% endblock %}
+    </main>
+    <div class="content footer">
+        <footer>
+            <div class="credit--title">
+                <h1>Made By</h1>
+                <h3>moayad_283734</h3>
+                <h3>jouli_233689</h3>
+                <h3>alaa_157791</h3>
+            </div>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>
